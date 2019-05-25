@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" style= "background-color: #ccffff"></div>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script>
+        const FirstComponent = (props) => {
+            return React.createElement('div', null,
+                React.createElement('img', { src: props.path, style: {'width': props.width }})
+            );
+        };
+
+        const SecondComponent = (props) => {
+            return React.createElement('h1', { style: { 'font-size': props.fontSize, 'color': props.color, 'text-align': props.orientation  } }, 'My pretty component!!!',
+                React.createElement(FirstComponent, { path: 'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn', width: 550 }),
+                React.createElement(FirstComponent, { path: 'http://www.3sidedmedia.com/Portals/3/EasyGalleryImages/1/251/1510172827500.jpg', width: 550 }),
+                React.createElement(FirstComponent, { path: 'https://www.thehappycatsite.com/wp-content/uploads/2017/11/kitten-tabby.jpg', width: 550 }),
+                React.createElement(FirstComponent, { path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdTRKXqahzk_rVTUEB7wira46ya_rkUKUeuuTVIFMC-Sx1Wnjj', width: 550 }),
+                React.createElement(FirstComponent, { path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnJiN-btyP7Qu-CWmiXpCG6Z4cOlLALqIuLERBqhkvtGorb-9Ydg', width: 550 }),
+            );
+        };
+
+        ReactDOM.render(React.createElement(SecondComponent, { fontSize: 38, color: '#3366ff', orientation: 'center' }), document.getElementById('app'));
+    </script>
+</body>
+
+</html>
